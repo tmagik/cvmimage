@@ -1,0 +1,7 @@
+abi <abi/4.0>,
+
+include <tunables/global>
+
+/usr/bin/mkosi flags=(default_allow) {
+        userns,
+}

@@ -5,13 +5,16 @@ cpus = 32
 
 all: clean build
 
+packages:
+	mkdir -p packages
+
 hash:
 	objcopy -O binary --only-section .cmdline tinfoilcvm.efi /dev/stdout
 
 clean:
 	sudo rm -rf tinfoilcvm.*
 
-build:
+build: packages
 	mkosi
 	rm -f tinfoilcvm
 
